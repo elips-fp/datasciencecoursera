@@ -1,10 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+## Code written by Esther Lips, Dec 2017
 
 ## function takes matrix as input and returns a set of functions
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix()) 
+{
   m <- NULL
   
   # function to set matrix
@@ -15,17 +13,19 @@ makeCacheMatrix <- function(x = matrix()) {
   
   get <- function() x     # function that gets matrix
   setinverse <- function(inverse) m <<- inverse # function that inverses matrix 
-  getinverse <- function() m
+  getinverse <- function() m # function that gets inversed matrix
   
+  # return list of functions
   list(set = set, get = get,
        setinverse = setinverse,
        getinverse = getinverse)
 }
 
 
-## Write a short comment describing this function
-# function takes matrix that is used as input in function makeCacheMatrix and inverses it by using the functions from makeCacheMatrix
-cacheSolve <- function(x, ...) {
+# function takes matrix that is used as input in function makeCacheMatrix 
+# and inverses it by using the functions from makeCacheMatrix
+cacheSolve <- function(x, ...) 
+{
   ## Return a matrix that is the inverse of 'x'
   m <- x$getinverse()
   
